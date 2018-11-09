@@ -1,7 +1,6 @@
 const Discord = require("discord.js");
 const bot = new Discord.Client({enableEveryone: true}, {enableTextChannel: true});
 const config = require("./config.json");
-const figlet = require("figlet");
 
 bot.on("ready", async () => {
 	console.log(`${bot.user.username} sudah online!`);
