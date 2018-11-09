@@ -1,13 +1,13 @@
 const Discord = require('discord.js');
-const client = new Discord.Client();
+const bot = new Discord.Client();
 
 let prefix = 'm=';
 
-client.on('ready', () => {                
+bot.on('ready', () => {                
     console.log('Ready!');   
 });
 
-client.on('message', message => {
+bot.on('message', message => {
 
     let msg = message.content.toLowerCase();
     let sender = message.author;
@@ -27,4 +27,4 @@ client.on('message', message => {
     }
 });
 
-client.login("process.env.TOKEN");
+bot.login("process.env.TOKEN");
