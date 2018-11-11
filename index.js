@@ -28,7 +28,7 @@ const byeChannel = member.guild.channels.find('name', 'welcomer_goodbye');
     let byeEmbed = new Discord.RichEmbed()
     .setTitle("Member Keluar!")
     .setThumbnail(member.user.displayAvatarURL)
-    .setDescription(`${member.username}, \n Semoga Kamu Menemukan Server \n Yang Lebih Baik Lagi!`)
+    .setDescription(`${member.user}, \n Semoga Kamu Menemukan Server \n Yang Lebih Baik Lagi!`)
     .setColor("RANDOM")
     .setTimestamp();
     byeChannel.send(byeEmbed)
