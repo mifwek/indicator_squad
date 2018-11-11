@@ -22,6 +22,20 @@ const welcomeChannel = member.guild.channels.find('name', 'welcomer_goodbye');
 	
 });
 
+bot.on('guildMemberRemove', async (member) => {
+const byeChannel = member.guild.channels.find('name', 'welcomer_goodbye');
+  if (byeChannel) {
+    let byeEmbed = new Discord.RichEmbed()
+    .setTitle("Member Keluar!")
+    .setThumbnail(member.user.displayAvatarURL)
+    .setDescription(`${member.username}, \n Semoga Kamu Menemukan Server \n Yang Lebih Baik Lagi!`)
+    .setColor("RANDOM")
+    .setTimestamp();
+    byeChannel.send(byeEmbed)
+  }
+
+});
+
 bot.on("message", async message => {
 	if (message.author.bot) return;
 	if (message.channel.type === 'dm') return
