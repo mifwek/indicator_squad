@@ -36,6 +36,7 @@ bot.on("message", async message => {
             .addField(" - avatar", "`m=avatar @mention`")
             .addField(" - unik", "`m=unik halo`")
             .addField(" - judi", "`m=judi`")
+	    .addField(" - kuis", "`m=kuis`")
             .addField(" - ping", "`m=ping`")
             .setColor(0x00FFEE)
             .setFooter("Ⓒ 2018 Indicator_Squad Bot.");
