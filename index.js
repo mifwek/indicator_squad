@@ -1,7 +1,6 @@
 const Discord = require("discord.js");
 const bot = new Discord.Client({enableEveryone: true}, {enableTextChannel: true});
 const config = require("./config.json");
-const figlet = require("figlet");
 
 bot.on("ready", async () => {
 	console.log(`${bot.user.username} sudah online!`);
@@ -34,7 +33,6 @@ bot.on("message", async message => {
             .addField(" - botinfo", "`m=botinfo`")
             .addField(" - userinfo", "`m=userinfo @mention`")
             .addField(" - avatar", "`m=avatar @mention`")
-            .addField(" - unik", "`m=unik halo`")
             .addField(" - judi", "`m=judi`")
 	    .addField(" - kuis", "`m=kuis`")
             .addField(" - ping", "`m=ping`")
@@ -120,15 +118,6 @@ bot.on("message", async message => {
           message.channel.send(say);
     }
    
-	if (cmd === `${prefix}unik`) {
-    		if (!args.join(' ')) return message.channel.send('harap berikan teks');
-    		figlet(args.join(' '), (err, data) => {
-    			message.channel.send(data, {
-    				code: 'ascii'
-    			});
-    		});
-    	};
-	
     if (cmd === `${prefix}avatar`) {
     	let user = message.mentions.users.first() || message.author;
         let embed = new Discord.RichEmbed()
