@@ -13,7 +13,7 @@ const welcomeChannel = member.guild.channels.find('name', 'welcomer_goodbye');
      let WelcomeEmbed = new Discord.RichEmbed()
     .setTitle("Member Baru!")
     .setThumbnail(member.user.displayAvatarURL)
-    .setDescription(`${member.user} \n Selamat Datang Di Server ${member.guild.name}, \n Jangan Lupa Ya Dibaca \n RULES \n INFORMASI \n Dan Isi BIODATA \n Terima Kasih!`)
+    .setDescription(`${member.user} \n Selamat Datang Di Server ${member.guild.name}, \n Jangan Lupa Ya Dibaca : \n - RULES \n - INFORMASI \n - Dan Isi BIODATA \n Terima Kasih!`)
     .setColor("RANDOM")
     .setFooter(`Kamu Member Ke ${member.guild.memberCount}`)
     .setTimestamp();
