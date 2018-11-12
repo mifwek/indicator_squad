@@ -26,10 +26,10 @@ let place = 0;
 const servers = config.servers;
 
 function changeColor() {
-  for (let index = 0; index < servers.length; ++index) {		
+  for (let index = 0; index < servers.length; ++index) {    
     bot.guilds.get(servers[index]).roles.find('name', config.roleName).setColor(rainbow[place])
-		.catch(console.error);
-		
+    .catch(console.error);
+    
     if(config.logging){
       console.log(`[ColorChanger] Changed color to ${rainbow[place]} in server: ${servers[index]}`);
     }
@@ -70,7 +70,7 @@ const welcomeChannel = member.guild.channels.find('name', 'welcomer_goodbye');
     .setTimestamp();
     welcomeChannel.send(WelcomeEmbed)
   }
-	
+  
 });
 
 bot.on('guildMemberRemove', async (member) => {
@@ -88,17 +88,17 @@ const byeChannel = member.guild.channels.find('name', 'welcomer_goodbye');
 });
 
 bot.on("message", async message => {
-	if (message.author.bot) return;
-	if (message.channel.type === 'dm') return
+  if (message.author.bot) return;
+  if (message.channel.type === 'dm') return
 
-	let prefix = config.prefix;
-	let messageArray = message.content.split(" ");
-	let cmd = messageArray[0];
-	let args = messageArray.slice(1);
+  let prefix = config.prefix;
+  let messageArray = message.content.split(" ");
+  let cmd = messageArray[0];
+  let args = messageArray.slice(1);
 
-	if (cmd === `${prefix}halo`) {
-		message.channel.send("halo juga");
-	}
+  if (cmd === `${prefix}halo`) {
+    message.channel.send("halo juga");
+  }
 
     if (cmd === `${prefix}help`) {
         var embedhelpmember = new Discord.RichEmbed()
@@ -106,27 +106,27 @@ bot.on("message", async message => {
             .addField(" - Serverinfo", "`m=serverinfo`")
             .addField(" - Botinfo", "`m=botinfo`")
             .addField(" - Userinfo", "`m=userinfo @mention`")
-	    .addField(" - Youtube", "`m=youtube`")
+            .addField(" - Youtube", "`m=youtube`")
             .addField(" - Avatar", "`m=avatar @mention`")
             .addField(" - Judi", "`m=judi`")
-	    .addField(" - Kuis", "`m=kuis`")
+            .addField(" - Kuis", "`m=kuis`")
             .addField(" - Ping", "`m=ping`")
-	    .addField(" - Unik", "`m=unik`")
+            .addField(" - Unik", "`m=unik`")
             .setColor(0x00FFEE)
-            .setFooter("Ⓒ 2018 Indicator_Squad Bot.");
+            .setFooter("Ⓒ 2018 Indicator_Squad Bot");
             message.channel.send(embedhelpmember)
     };
 
-	if (cmd === `${prefix}botinfo`) {
-		let bicon = bot.user.displayAvatarURL;
-		let botembed = new Discord.RichEmbed()
-		.setTitle("Informasi Bot")
-		.setColor("RANDOM")
-		.setThumbnail(bicon)
-		.addField("Nama Bot", bot.user.username)
-		.addField("Dibuat", bot.user.createdAt);
-		message.channel.send(botembed);
-	}
+  if (cmd === `${prefix}botinfo`) {
+    let bicon = bot.user.displayAvatarURL;
+    let botembed = new Discord.RichEmbed()
+    .setTitle("Informasi Bot")
+    .setColor("RANDOM")
+    .setThumbnail(bicon)
+    .addField("Nama Bot", bot.user.username)
+    .addField("Dibuat", bot.user.createdAt);
+    message.channel.send(botembed);
+  }
 
     if (cmd === `${prefix}kuis`) {
        const quiz = [
@@ -170,32 +170,32 @@ bot.on("message", async message => {
       message.delete().catch();
     }
 
-	if (cmd === `${prefix}serverinfo`) {
-		let sicon = message.guild.iconURL;
-		let serverembed = new Discord.RichEmbed()
-		.setTitle("Informasi Server")
-		.setColor("RANDOM")
-		.setThumbnail(sicon)
-		.addField("Nama Server", message.guild.name)
-		.addField("ID", message.guild.id)
-		.addField("Member", message.guild.memberCount)
-		.addField("Negara", message.guild.region)
-		.addField("Dibuat", message.guild.createdAt)
-		.addField("Owner", message.guild.owner)
+  if (cmd === `${prefix}serverinfo`) {
+    let sicon = message.guild.iconURL;
+    let serverembed = new Discord.RichEmbed()
+    .setTitle("Informasi Server")
+    .setColor("RANDOM")
+    .setThumbnail(sicon)
+    .addField("Nama Server", message.guild.name)
+    .addField("ID", message.guild.id)
+    .addField("Member", message.guild.memberCount)
+    .addField("Negara", message.guild.region)
+    .addField("Dibuat", message.guild.createdAt)
+    .addField("Owner", message.guild.owner)
 
-		message.channel.send(serverembed);
-	}
+    message.channel.send(serverembed);
+  }
 
     if (cmd === `${prefix}say`) {
-	    if(!message.member.hasPermission("ADMINISTRATOR")) return;
-		let say = args.join(" ");
+      if(!message.member.hasPermission("ADMINISTRATOR")) return;
+    let say = args.join(" ");
         if(!say) return message.reply("masukan sebuah kata atau kalimat");
           message.delete().catch(O_o=>{}); 
           message.channel.send(say);
     }
    
     if (cmd === `${prefix}avatar`) {
-    	let user = message.mentions.users.first() || message.author;
+      let user = message.mentions.users.first() || message.author;
         let embed = new Discord.RichEmbed()
         .setAuthor(`${user.username}'s Avatar`)
         .setImage(user.displayAvatarURL)
@@ -205,7 +205,7 @@ bot.on("message", async message => {
     };
 
     if (cmd === `${prefix}userinfo`) {
-    	let user = message.mentions.users.first() || message.author;
+      let user = message.mentions.users.first() || message.author;
         let embed = new Discord.RichEmbed()
         .setAuthor(`${user.tag}'s Info`, user.displayAvatarURL)
         .setThumbnail(user.displayAvatarURL)
@@ -220,7 +220,7 @@ bot.on("message", async message => {
     };
 
     if (cmd === `${prefix}hapus`) {
-    	if(isNaN(args[0])) return message.channel.send('Harap berikan jumlah yang valid untuk membersihkan atau menghapus pesan!');
+      if(isNaN(args[0])) return message.channel.send('Harap berikan jumlah yang valid untuk membersihkan atau menghapus pesan!');
         if (args[0] > 100) return message.channel.send('Berikan jumlah kurang dari 100!');
         message.channel.bulkDelete(args[0])
 
@@ -228,24 +228,24 @@ bot.on("message", async message => {
 
     if (cmd === `${prefix}judi`) {
        const slots = ['🍇', '🍊', '🍐'];
-		const slotOne = slots[Math.floor(Math.random() * slots.length)];
-		const slotTwo = slots[Math.floor(Math.random() * slots.length)];
-		const slotThree = slots[Math.floor(Math.random() * slots.length)];
-	if (slotOne === slotTwo && slotOne === slotThree) {
-			return message.reply(`
-				
-				${slotOne}     |     ${slotTwo}     |     ${slotThree}
-				
+    const slotOne = slots[Math.floor(Math.random() * slots.length)];
+    const slotTwo = slots[Math.floor(Math.random() * slots.length)];
+    const slotThree = slots[Math.floor(Math.random() * slots.length)];
+  if (slotOne === slotTwo && slotOne === slotThree) {
+      return message.reply(`
+        
+        ${slotOne}     |     ${slotTwo}     |     ${slotThree}
+        
  Kamu Menang, lu hoki cuk haha!
-		    `);
-		}
-		return message.reply(`
-			    
-			    ${slotOne}     |     ${slotTwo}     |     ${slotThree}
-			    
+        `);
+    }
+    return message.reply(`
+          
+          ${slotOne}     |     ${slotTwo}     |     ${slotThree}
+          
  Kamu kalah!... Wkwkwkwkw!
-		    `);
-	    }
+        `);
+      }
 
     if (cmd === `${prefix}ping`) {
         let start = Date.now(); message.channel.send(':ping_pong:').then(message => { 
@@ -261,7 +261,7 @@ bot.on("message", async message => {
     });
  
     }
-	
+  
     if (cmd === `${prefix}youtube`) {
         let youtube = args.slice(0).join('+');
         let link = `https://www.youtube.com/results?search_query=` + youtube;
@@ -279,15 +279,15 @@ bot.on("message", async message => {
               message.author.send(`Kamu Telah Mencari ${link} Di ${ message.guild.name}`);
 
      }
-	
+  
      if (cmd === `${prefix}unik`) {
-    		if (!args.join(' ')) return message.channel.send('harap berikan teks');
-    		figlet(args.join(' '), (err, data) => {
-    			message.channel.send(data, {
-    				code: 'ascii'
-    			});
-    		});
-    	};
+        if (!args.join(' ')) return message.channel.send('harap berikan teks');
+        figlet(args.join(' '), (err, data) => {
+          message.channel.send(data, {
+            code: 'ascii'
+          });
+        });
+      };
 
 });
 
