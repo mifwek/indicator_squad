@@ -286,6 +286,7 @@ bot.on("message", async message => {
           .addField('Channel', results[0].channel.title, true)
           .addField('Deskripsi', results[0].description)
           .addField('Link', `https://www.youtube.com/watch?v=${results[0].id}`);
+          .addField('🎥', `https://www.youtube.com/embed/${results[0].id}`);
 
           message.channel.send(ytEmbed);
       })
