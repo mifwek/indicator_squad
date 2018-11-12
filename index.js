@@ -8,10 +8,9 @@ const rainbow = new Array(size);
 for (var i=0; i<size; i++) {
   var red   = sin_to_hex(i, 0 * Math.PI * 2/3); // 0   deg
   var blue  = sin_to_hex(i, 1 * Math.PI * 2/3); // 120 deg
-  var green = sin_to_hex(i, 2 * Math.PI * 2/3); // 240 deg
-  var yellow = sin_to_hex(i, 3 * Math.PI * 2/3); // 360 deg 
+  var green = sin_to_hex(i, 2 * Math.PI * 2/3); // 240 deg 
 
-  rainbow[i] = '#'+ red + yellow + green + blue;
+  rainbow[i] = '#'+ red + green + blue;
 }
 
 function sin_to_hex(i, phase) {
