@@ -4,7 +4,15 @@ const config = require("./config.json");
 
 bot.on("ready", async () => {
 	console.log(`${bot.user.username} sudah online!`);
-	bot.user.setActivity("Active!", {type: "LISTENING"});
+	var oyun = [
+  `DISCORD!`, 
+  `FREE FIRE!`, 
+  `INDICATOR!`];
+setInterval(function() {
+  var random = Math.floor(Math.random()*(oyun.length-0+1)+0);
+  client.user.setGame(oyun[random], "https://tv.youtube.com/");
+  }, 50000);
+	
 });
 
 bot.on('guildMemberAdd', async (member) => {
