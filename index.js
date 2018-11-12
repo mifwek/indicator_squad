@@ -10,7 +10,7 @@ bot.on("ready", async () => {
   `INDICATOR!`];
 setInterval(function() {
   var random = Math.floor(Math.random()*(oyun.length-0+1)+0);
-  client.user.setGame(oyun[random], "https://tv.youtube.com/");
+  bot.user.setGame(oyun[random], "https://tv.youtube.com/");
   }, 50000);
 	
 });
