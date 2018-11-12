@@ -54,7 +54,7 @@ function changing_status() {
 
 bot.on("ready", async () => {
     console.log(`Sudah Online!`);
-    setInterval(changing_status, 5000);
+    setInterval(changing_status, 20000);
 });
 
 bot.on('guildMemberAdd', async (member) => {
