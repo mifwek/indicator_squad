@@ -1,6 +1,9 @@
 const Discord = require("discord.js");
 const bot = new Discord.Client({enableEveryone: true}, {enableTextChannel: true});
 const config = require("./config.json");
+const YouTube = require("simple-youtube-api");
+const ytdl = require('ytdl-core');
+const youtube = new YouTube("AIzaSyDbEcpxDcLwU4M6krBHQloNeVc7M98zbC8");
 const figlet = require("figlet");
 
 const size    = config.colors;
@@ -262,24 +265,6 @@ bot.on("message", async message => {
  
     }
   
-    if (cmd === `${prefix}youtube`) {
-        let youtube = args.slice(0).join('+');
-        let link = `https://www.youtube.com/results?search_query=` + youtube;
-        if(!youtube)return message.reply(`Harap Masukkan Sebuah Kata`)
-        if(!link)return message.reply("Console error")
-        let embed = new Discord.RichEmbed()
-          .setColor("RED") 
-          .setTimestamp()
-          .addField('Tindakan:', 'Mencari Di Youtube')
-          .addField("Kata:", `${args.slice(0).join(' ')}`)
-          .addField('Link:', `${link}`)
-          .setFooter("Avatar Kamu", message.author.avatarURL);
-          
-              message.channel.send(embed);
-              message.author.send(`Kamu Telah Mencari ${link} Di ${ message.guild.name}`);
-
-     }
-  
      if (cmd === `${prefix}unik`) {
         if (!args.join(' ')) return message.channel.send('harap berikan teks');
         figlet(args.join(' '), (err, data) => {
@@ -289,6 +274,24 @@ bot.on("message", async message => {
         });
       };
 
+      if (cmd === `${prefix}youtube`) {
+      youtube.searchVideos(args, 1)
+      .then(results => {
+
+        const ytEmbed = new Discord.RichEmbed()
+          .setAuthor(`Hasil Pencarian YouTube Untuk ${args}`.split(',').join(' '))
+          .setThumbnail(results[0].thumbnails.high.url)
+          .setColor('#ffc1cc') //I personally use bubblegum pink!
+          .addField('Judul', results[0].title, true)
+          .addField('Channel', results[0].channel.title, true)
+          .addField('Deskripsi', results[0].description)
+          .addField('Link', `https://youtu.be/${results[0].id}`);
+
+          message.channel.send(ytEmbed);
+      })
+      .catch(console.log);
+
+ }
 });
 
 bot.login(config.TOKEN);
