@@ -285,7 +285,7 @@ bot.on("message", async message => {
           .addField('Judul', results[0].title, true)
           .addField('Channel', results[0].channel.title, true)
           .addField('Deskripsi', results[0].description)
-          .addField('Link', `https://youtu.be/${results[0].id}`);
+          .addField('Link', `https://www.youtube.com/watch?v=${results[0].id}`);
 
           message.channel.send(ytEmbed);
       })
