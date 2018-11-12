@@ -258,6 +258,24 @@ bot.on("message", async message => {
     });
  
     }
+	
+    if (cmd === `${prefix}youtube`) {
+        let youtube = args.slice(0).join('+');
+        let link = `https://www.youtube.com/results?search_query=` + youtube;
+        if(!youtube)return message.reply(`Harap Masukkan Sebuah Kata`)
+        if(!link)return message.reply("Console error")
+        let embed = new Discord.RichEmbed()
+          .setColor("RED") 
+          .setTimestamp()
+          .addField('Tindakan:', 'Mencari Di Youtube')
+          .addField("Kata:", `${args.slice(0).join(' ')}`)
+          .addField('Link:', `${link}`)
+          .setFooter("Avatar Kamu", message.author.avatarURL);
+          
+              message.channel.send(embed);
+              message.author.send(`Kamu Telah Mencari ${link} Di ${ message.guild.name}`);
+
+      }
 
 });
 
