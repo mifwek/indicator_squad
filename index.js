@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 const bot = new Discord.Client({enableEveryone: true}, {enableTextChannel: true});
 const config = require("./config.json");
+const figlet = require("figlet");
 
 const size    = config.colors;
 const rainbow = new Array(size);
@@ -102,13 +103,15 @@ bot.on("message", async message => {
     if (cmd === `${prefix}help`) {
         var embedhelpmember = new Discord.RichEmbed()
             .setTitle("__**📁COMMAND LIST**__")
-            .addField(" - serverinfo", "`m=serverinfo`")
-            .addField(" - botinfo", "`m=botinfo`")
-            .addField(" - userinfo", "`m=userinfo @mention`")
-            .addField(" - avatar", "`m=avatar @mention`")
-            .addField(" - judi", "`m=judi`")
-	    .addField(" - kuis", "`m=kuis`")
-            .addField(" - ping", "`m=ping`")
+            .addField(" - Serverinfo", "`m=serverinfo`")
+            .addField(" - Botinfo", "`m=botinfo`")
+            .addField(" - Userinfo", "`m=userinfo @mention`")
+	    .addField(" - Youtube", "`m=youtube`"
+            .addField(" - Avatar", "`m=avatar @mention`")
+            .addField(" - Judi", "`m=judi`")
+	    .addField(" - Kuis", "`m=kuis`")
+            .addField(" - Ping", "`m=ping`")
+	    .addField(" - Unik", "`m=unik`")
             .setColor(0x00FFEE)
             .setFooter("Ⓒ 2018 Indicator_Squad Bot.");
             message.channel.send(embedhelpmember)
@@ -275,7 +278,16 @@ bot.on("message", async message => {
               message.channel.send(embed);
               message.author.send(`Kamu Telah Mencari ${link} Di ${ message.guild.name}`);
 
-      }
+     }
+	
+     if (cmd === `${prefix}unik`) {
+    		if (!args.join(' ')) return message.channel.send('harap berikan teks');
+    		figlet(args.join(' '), (err, data) => {
+    			message.channel.send(data, {
+    				code: 'ascii'
+    			});
+    		});
+    	};
 
 });
 
