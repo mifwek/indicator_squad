@@ -2,7 +2,7 @@
 	"prefix": "m=",
 	"TOKEN": "NTA3ODk5Mzc5NjM0NTM2NDYw.Dsdalg._BsDzGYvabCcv773UV8CRsnpjbM",
 	"servers": ["470754421169586198"],
-	"roleName": "INDICATOR" "OFFICIAL BOT" "STAFF",
+	"roleName": ["INDICATOR", "OFFICIAL BOT", "STAFF"],
 	"colors": 6,
 	"speed": 1000,
 	"logging": true
