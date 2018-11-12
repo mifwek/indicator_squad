@@ -2,17 +2,15 @@ const Discord = require("discord.js");
 const bot = new Discord.Client({enableEveryone: true}, {enableTextChannel: true});
 const config = require("./config.json");
 
+function changing_status() {
+    let status = ['DISCORD!', 'FREE FIRE', 'INDICATOR']
+    let random = status[Math.floor(Math.random() * status.length)]
+    bot.user.setActivity(random)
+}
+
 bot.on("ready", async () => {
-	console.log(`${bot.user.username} sudah online!`);
-	var oyun = [
-  `DISCORD!`, 
-  `FREE FIRE!`, 
-  `INDICATOR!`];
-setInterval(function() {
-  var random = Math.floor(Math.random()*(oyun.length-0+1)+0);
-  bot.user.setGame(oyun[random], "https://tv.youtube.com/");
-  }, 50000);
-	
+    console.log(`Sudah Online!`);
+    setInterval(changing_status, 9000);
 });
 
 bot.on('guildMemberAdd', async (member) => {
