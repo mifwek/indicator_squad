@@ -5,6 +5,7 @@ const YouTube = require("simple-youtube-api");
 const ytdl = require('ytdl-core');
 const youtube = new YouTube("AIzaSyDbEcpxDcLwU4M6krBHQloNeVc7M98zbC8");
 const figlet = require("figlet");
+const embed = require("embed-video")
 
 const size    = config.colors;
 const rainbow = new Array(size);
@@ -285,8 +286,9 @@ bot.on("message", async message => {
           .addField('Judul', results[0].title, true)
           .addField('Channel', results[0].channel.title, true)
           .addField('Deskripsi', results[0].description)
-          .addField('Link', `https://www.youtube.com/watch?v=${results[0].id}`);
-          .addField('🎥', `https://www.youtube.com/embed/${results[0].id}`);
+          .addField('Link', `https://www.youtube.com/watch?v=${results[0].id}`)
+          .addField('Embed', `https://www.youtube.com/embed/${results[0].id}`);
+
 
           message.channel.send(ytEmbed);
       })
