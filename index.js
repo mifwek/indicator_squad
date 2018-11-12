@@ -294,4 +294,4 @@ bot.on("message", async message => {
  }
 });
 
-bot.login(process.env.config.TOKEN);
+bot.login(config.TOKEN);
