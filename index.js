@@ -1,11 +1,6 @@
 const Discord = require("discord.js");
 const bot = new Discord.Client({enableEveryone: true}, {enableTextChannel: true});
 const config = require("./config.json");
-const YouTube = require("simple-youtube-api");
-const ytdl = require('ytdl-core');
-const youtube = new YouTube("AIzaSyDbEcpxDcLwU4M6krBHQloNeVc7M98zbC8");
-const figlet = require("figlet");
-const embed = require("embed-video")
 
 const size    = config.colors;
 const rainbow = new Array(size);
