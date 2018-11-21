@@ -46,16 +46,9 @@ bot.on('ready', () => {
   setInterval(changeColor, config.speed);
 });
 
-function changing_status() {
-    let status = ['DISCORD.!', 'FREE FIRE.!', 'HELP.!']
-    let random = status[Math.floor(Math.random() * status.length)]
-
-    bot.user.setActivity("random", {type:WATCHING});
-}
-
 bot.on("ready", async () => {
-    console.log(`Sudah Online!`);
-    setInterval(changing_status, 20000);
+	console.log(`${bot.user.username} sudah online!`);
+	bot.user.setActivity("Active!", {type: "LISTENING"});
 });
 
 bot.on('guildMemberAdd', async (member) => {
