@@ -47,9 +47,11 @@ bot.on('ready', () => {
 });
 
 function changing_status() {
-    let status = ['DISCORD!', 'FREE FIRE', 'INDICATOR']
+    let status = ['DISCORD!', 'FREE FIRE', 'noHELP']
     let random = status[Math.floor(Math.random() * status.length)]
-    bot.user.setActivity(random)
+    let STATUSi = ['LISTENING', 'WATCHING', 'STREAMING']
+    let RANDOMi = STATUSi[Math.floor(Math.RANDOMi() * STATUSi.length)]
+    bot.user.setActivity(random), type(RANDOMi)
 }
 
 bot.on("ready", async () => {
