@@ -61,7 +61,7 @@ bot.on('guildMemberAdd', async (member) => {
 const welcomeChannel = member.guild.channels.find('name', 'welcomer_goodbye');
   if (welcomeChannel) {
      let WelcomeEmbed = new Discord.RichEmbed()
-    .setImage("https://cdn.discordapp.com/attachments/501711682360573959/512016341083881482/welcome.gif")
+    .setImage("https://cdn.discordapp.com/attachments/514584901207588889/514594619682717696/welcome.gif")
     .setTitle("[ MEMBER BARU ]")
     .setThumbnail(member.user.displayAvatarURL)
     .setDescription(`${member.user} \n Selamat Datang Di Server ${member.guild.name}, \n Jangan Lupa Ya Dibaca : \n # RULES \n # INFORMASI \n Dan Isi # BIODATA \n Terima Kasih!`)
@@ -77,7 +77,7 @@ bot.on('guildMemberRemove', async (member) => {
 const byeChannel = member.guild.channels.find('name', 'welcomer_goodbye');
   if (byeChannel) {
     let byeEmbed = new Discord.RichEmbed()
-    .setImage("https://cdn.discordapp.com/attachments/501711682360573959/512023840562348032/goodbye.gif")
+    .setImage("https://cdn.discordapp.com/attachments/514584901207588889/514594620177514496/goodbye.gif")
     .setTitle("[ MEMBER KELUAR ]")
     .setThumbnail(member.user.displayAvatarURL)
     .setDescription(`${member.user.tag} \n Semoga Kamu Menemukan Server \n Yang Lebih Baik Lagi!`)
