@@ -58,7 +58,7 @@ bot.on("ready", async () => {
 });
 
 bot.on('guildMemberAdd', async (member) => {
-const welcomeChannel = member.guild.channels.find('name', 'welcomer_goodbye');
+const welcomeChannel = member.guild.channels.find('name', 'welcomer-goodbye');
   if (welcomeChannel) {
      let WelcomeEmbed = new Discord.RichEmbed()
     .setImage("https://cdn.discordapp.com/attachments/514584901207588889/514594619682717696/welcome.gif")
@@ -74,7 +74,7 @@ const welcomeChannel = member.guild.channels.find('name', 'welcomer_goodbye');
 });
 
 bot.on('guildMemberRemove', async (member) => {
-const byeChannel = member.guild.channels.find('name', 'welcomer_goodbye');
+const byeChannel = member.guild.channels.find('name', 'welcomer-goodbye');
   if (byeChannel) {
     let byeEmbed = new Discord.RichEmbed()
     .setImage("https://cdn.discordapp.com/attachments/514584901207588889/514594620177514496/goodbye.gif")
