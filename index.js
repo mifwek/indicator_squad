@@ -71,7 +71,7 @@ bot.on('guildMemberRemove', async (member) => {
 const byeChannel = member.guild.channels.find('name', 'welcomer-goodbye');
   if (byeChannel) {
     let byeEmbed = new Discord.RichEmbed()
-    .setImage("https://cdn.discordapp.com/attachments/514584901207588889/514594620177514496/goodbye.gif")
+    .setImage("https://cdn.discordapp.com/attachments/514584901207588889/516357838201683999/goodbye.gif")
     .setTitle("[ MEMBER KELUAR ]")
     .setThumbnail(member.user.displayAvatarURL)
     .setDescription(`${member.user.tag} \n Semoga Kamu Menemukan Server \n Yang Lebih Baik Lagi!`)
