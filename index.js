@@ -46,9 +46,28 @@ bot.on('ready', () => {
   setInterval(changeColor, config.speed);
 });
 
-bot.on("ready", async () => {
-	console.log(`${bot.user.username} sudah online!`);
-	bot.user.setActivity("Active!", {type: "LISTENING"});
+bot.on('ready', function() {
+      setInterval(async () => {
+    const statuslist = [
+      `<noHelp | ${bot.guilds.size} guilds`,
+      `<noHelp | ${bot.channels.size} channels`,
+      `<noHelp | ${bot.users.size} users`
+    ];
+    const random = Math.floor(Math.random() * statuslist.length);
+
+    try {
+      await bot.user.setPresence({
+        game: {
+          name: `${statuslist[random]}`,
+          type: "WATCHING"
+          
+        },
+        status: "online"
+      });
+    } catch (error) {
+      console.error(error);
+    }
+  }, 10000);
 });
 
 bot.on('guildMemberAdd', async (member) => {
