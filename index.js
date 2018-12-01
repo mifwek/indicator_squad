@@ -49,9 +49,9 @@ bot.on('ready', () => {
 bot.on('ready', function() {
       setInterval(async () => {
     const statuslist = [
-      `<noHelp | ${bot.guilds.size} guilds`,
-      `<noHelp | ${bot.channels.size} channels`,
-      `<noHelp | ${bot.users.size} users`
+      `🌐 ${bot.guilds.size} Guilds`,
+      `🔌 ${bot.channels.size} Channels`,
+      `👥 ${bot.users.size} Users`
     ];
     const random = Math.floor(Math.random() * statuslist.length);
 
