@@ -1,9 +1,5 @@
 {
 	"prefix": "m=",
 
-	"servers": ["514572222858526740"],
-	"roleName": "RAINBOW",
-	"colors": 10,
-	"speed": 2000,
-	"logging": true
+	
 }
