@@ -4,7 +4,7 @@ const config = require("./config.json");
 
 bot.on("ready", async () => {
 	console.log(`${bot.user.username} sudah online!`);
-	bot.user.setActivity("Active!", {type: "LISTENING"});
+	bot.user.setActivity("| 1 Guild 🌐", {type: "WATCHING"});
 });
 
 bot.on('guildMemberAdd', async (member) => {
