@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 
 exports.run = async (bot, message, args) => {
+	if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("Anda tidak punya akses ini");
     var channel = message.guild.channels.find('name', '🔸report💢');
     let member = message.mentions.members.first() || message.guild.members.get(args[0]);
     if (!member)
