@@ -15,7 +15,7 @@ exports.run = async (bot, message, args) => {
         .addField('Yang melaporkan:', message.author)
         .addField('Yang dilaporkan:', member.user)
         .addField('Alasan:', reason)
-        .setFooter(`Dikirimkan oleh ${message.author.username}.`)
+        .setFooter("Note : 2 kali kena report maka akan kami banned")
         .setTimestamp()
     channel.send(embed);
 }
