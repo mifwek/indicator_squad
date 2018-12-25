@@ -44,7 +44,6 @@ bot.on("message", async message => {
 
   let prefix = config.prefix;
   let msg = message.content.toLowerCase();
-  let sender = message.author;
   let args = message.content.slice(prefix.length).trim().split(" ")
   let cmd = args.shift().toLowerCase();
 
