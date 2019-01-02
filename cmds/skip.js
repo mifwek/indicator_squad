@@ -14,6 +14,7 @@ var servers = {};
 exports.run = async (bot, message, args) => {
     //skip
     var server = servers[message.guild.id];
+    message.channel.createMessage('✅ | asiyappp 👌');
     if (server.dispatcher) server.dispatcher.end();
 }
 
