@@ -13,12 +13,12 @@ var servers = {};
 exports.run = async (bot, message, args) => {
     //play
     if (!args[0]) {
-         message.channel.send("Please specify a link");
+         message.channel.send("Silakan tentukan link");
          return
     }
     
     if(!message.member.voiceChannel) {
-        message.channel.sned("I think it may work better if you are in a voice channel!");
+        message.channel.sned("Saya pikir ini dapat bekerja lebih baik jika Anda berada di channel voice!");
     }
 
     if(!servers[message.guild.id]) servers[message.guild.id] = {
@@ -27,7 +27,7 @@ exports.run = async (bot, message, args) => {
     var server = servers[message.guild.id];
 
     server.queue.push(args[0]);
-    message.channel.send("Your song of choice is on the queue. ")
+    message.channel.send("Lagu pilihan Anda ada di antrian.")
     if(!message.member.voiceConnection) message.member.voiceChannel.join().then(function(connection) {
         play(connection, message);
     })
