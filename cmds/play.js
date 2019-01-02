@@ -27,7 +27,7 @@ exports.run = async (bot, message, args) => {
     var server = servers[message.guild.id];
 
     server.queue.push(args[0]);
-    message.channel.send("Lagu pilihan Anda ada di antrian.")
+    message.channel.send("👌 | Selamat mendengarkan.")
     if(!message.member.voiceConnection) message.member.voiceChannel.join().then(function(connection) {
         play(connection, message);
     })
