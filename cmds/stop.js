@@ -13,7 +13,6 @@ function play(connection, message) {
 var servers = {};
 exports.run = async (bot, message, args) => {
     var server = servers[message.guild.id];
-    message.channel.createMessage('✅ | asiyappp 👌');
     if(message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
 }
 
