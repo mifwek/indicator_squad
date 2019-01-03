@@ -26,8 +26,8 @@ const voiceChannel = msg.member.voiceChannel;
 		    })
 		    .on('error', error => {
 		  	    console.error(error);
-		    });
-}
+		    })
+};
 
 exports.help = {
     name: "play"
