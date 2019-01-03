@@ -6,8 +6,8 @@ exports.run = async (bot, message, args) => {
    if(!role) return message.channel.send("You forgot to type or mention a role!");
       let color = args.slice(1).join(" ");
    if(!color) return message.channel.send("You forgot to type a color hex!");
-      await role.setColor(color).catch(error => message.channel.send(`Error: ${error}`));
-      await message.channel.send(`\`${role.name}\`'s color was changed to ${role.color}`).catch(error => message.channel.send(`Error: ${error}`));
+      await role.setColor(color).catch(error => message.channel.send(`Error: ${error}`)); return
+      await message.channel.send(`\`${role.name}\`'s color was changed to ${role.color}`).catch(error => message.channel.send(`Error: ${error}`)); return
 };
 
 exports.help = {
