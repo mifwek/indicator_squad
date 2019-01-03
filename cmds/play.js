@@ -12,6 +12,7 @@ function play(connection, message) {
 var servers = {};
 exports.run = async (bot, message, args) => {
     //play
+    if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("Gua males muterin musik buat lu 😅");
     if (!args[0]) {
          message.channel.send("Silakan tentukan link");
          return
