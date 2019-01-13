@@ -10,7 +10,7 @@ exports.run = async (bot, message, args) => {
 
        const ytEmbed = new Discord.RichEmbed()
         .setTitle(`Hasil Pencarian YouTube Untuk ${args}`.split(',').join(' '))
-        .setDescription(`https://www.youtube.com/watch?v=${results[0].id}`)
+        .setURL(`https://www.youtube.com/watch?v=${results[0].id}`)
 
         message.channel.send(ytEmbed);
       })
