@@ -9,7 +9,7 @@ var embedhelpadmin = new Discord.RichEmbed()
             .setColor(0x00FFEE)
             .setFooter("Telah diverifikasi ☑️");
 
-            message.channel.send(embedhelpmember)
+            message.channel.send(embedhelpadmin)
     };
 
 exports.help = {
