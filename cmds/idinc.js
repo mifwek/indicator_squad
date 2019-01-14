@@ -7,7 +7,7 @@ var embedhelpadmin = new Discord.RichEmbed()
             .addField("Tersedia", "`mip`, `hadi`, `potato`, `bima`, `dinan`, `pororo`, `Snap`, `dina`")
             .addField("Contoh :", "`m=idinc_<nama member>`")
             .setColor(0x00FFEE)
-            .setFooter("Telah diverifikasi ☑️");
+            .setTimestamp();
 
             message.channel.send(embedhelpadmin)
     };
