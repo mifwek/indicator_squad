@@ -9,12 +9,12 @@ exports.run = async (bot, message, args) => {
 "https://cdn.discordapp.com/attachments/514635773895507979/534280233394765825/20190114_145814.jpg"
 ];
 
-    var randomImage = images;
+
 
 const patEmb = new Discord.RichEmbed()
    .setTitle("ID Member Diambil Secara Random")
    .setColor(0xA901DB)
-   .setImage(randomImage);
+   .setImage(images);
 
 message.channel.send(patEmb);
 
