@@ -2,16 +2,15 @@ const Discord = require('discord.js')
 
 exports.run = async (bot, message, args) => {
 
-var patEmb = new Discord.RichEmbed()
-   .setTitle("**List ID Member Indicator Squad**")
-   .addField("Tersedia", "`mip`, `hadi`, `potato`, `bima`, `dinan`, `pororo`, `Snap`, `dina`");
-   .addField("Contoh :", "m=idinc_<nama member>")
-   .setColor(0x00FFEE)
-   .setTimestamp();
+var embedhelpadmin = new Discord.RichEmbed()
+            .setTitle("List ID member indicator squad")
+            .addField("Tersedia", "`mip`, `hadi`, `potato`, `bima`, `dinan`, `pororo`, `Snap`, `dina`")
+            .addField("Contoh :", "`m=idinc_<nama member>`")
+            .setColor(0x00FFEE)
+            .setFooter("verifikasi ☑️");
 
-message.channel.send(patEmb);
-
-}
+            message.channel.send(embedhelpmember)
+    };
 
 exports.help = {
     name: "idinc"
