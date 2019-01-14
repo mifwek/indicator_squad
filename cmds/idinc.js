@@ -4,7 +4,7 @@ exports.run = async (bot, message, args) => {
 
 let patEmb = new Discord.RichEmbed()
    .setTitle("**List ID Member Indicator Squad**")
-   .addField("Tersedia", "`mip` \n `hadi` \n `potato` \n `bima` \n `dinan` \n `pororo` \n `Snap` \n `dina`");
+   .setDescription("__**Tersedia**__ \n `mip` \n `hadi` \n `potato` \n `bima` \n `dinan` \n `pororo` \n `Snap` \n `dina`");
    .setFooter("Contoh : m=idinc_<nama member>")
 
 message.channel.send(patEmb);
