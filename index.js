@@ -4,7 +4,7 @@ const config = require("./config.json");
 
 bot.on("ready", async () => {
 	console.log(`${bot.user.username} sudah online!`);
-	bot.user.setActivity("INDICATOR SQUAD", {type: "WATCHING"});
+	bot.user.setActivity(.setTimestamp("WIB")), {type: "LISTENING"});
 });
 
 bot.on('guildMemberAdd', async (member) => {
