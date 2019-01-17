@@ -5,7 +5,7 @@ exports.run = async (bot, message, args) => {
 let patEmb = new Discord.RichEmbed()
    .setTitle("ID telah ditemukan")
    .setColor(0xA901DB)
-   .setImage("https://cdn.discordapp.com/attachments/514635773895507979/534741687055024138/20190115_213133.jpg");
+   .setImage("https://cdn.discordapp.com/attachments/514635773895507979/535526061274955786/20190118_012019.jpg");
 
 message.channel.send(patEmb);
 
