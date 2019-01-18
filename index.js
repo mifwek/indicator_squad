@@ -11,7 +11,7 @@ bot.on('guildMemberAdd', async (member) => {
 const welcomeChannel = member.guild.channels.find('name', 'welcomer-goodbye');
   if (welcomeChannel) {
      let WelcomeEmbed = new Discord.RichEmbed()
-    .setImage("https://cdn.discordapp.com/attachments/514635773895507979/535618299665448960/ezgif-4-eb4b3b0a7923-min_1-min.gif")
+    .setImage("https://cdn.discordapp.com/attachments/514584901207588889/516393989889589299/welcome.jpg")
     .setTitle("[ MEMBER BARU ]")
     .setThumbnail(member.user.displayAvatarURL)
     .setDescription(`👑 ${member.user} \n Selamat Datang Di Server ${member.guild.name}, \n Jangan Lupa Ya Dibaca : \n # RULES \n # INFORMASI \n Dan Isi # BIODATA \n Terima Kasih!`)
