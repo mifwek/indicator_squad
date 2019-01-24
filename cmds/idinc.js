@@ -7,7 +7,7 @@ var embedhelpadmin = new Discord.RichEmbed()
             .addField("Tersedia Sementara", "`mip`, `hadi`, `potato`, `bima`, `dinan`, `pororo`, `Snap`, `dina`, `suryo`, `papah`, \n`magnum`, `taufik`, `rifki`, `mail`")
             .addField("Contoh :", "Untuk menampilkan gambar ID member `INC`, \nKetikkan perintah berikut ; \n`m=idinc_<nama member>`")
             .setColor(0x00FFEE)
-            .setFooter("By ♤IŋᎠῖҪαϯϴR♤ BOT")
+            .setFooter("By OFFICIAL BOT")
 
             message.channel.send(embedhelpadmin)
     };
