@@ -1,2 +1,2 @@
-# indicator_squad
+# kalap_squad
 squad free free battleground
