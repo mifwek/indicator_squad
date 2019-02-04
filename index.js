@@ -4,14 +4,13 @@ const config = require("./config.json");
 
 bot.on("ready", async () => {
 	console.log(`${bot.user.username} sudah online!`);
-	bot.user.setActivity("| Follow IG @indicator_official", {type: "PLAYING"});
+	bot.user.setActivity("Powershell", {type: "PLAYING"});
 });
 
 bot.on('guildMemberAdd', async (member) => {
-const welcomeChannel = member.guild.channels.find('name', 'welcomer-goodbye');
+const welcomeChannel = member.guild.channels.find('name', 'welcome');
   if (welcomeChannel) {
      let WelcomeEmbed = new Discord.RichEmbed()
-    .setImage("https://cdn.discordapp.com/attachments/514584901207588889/516393989889589299/welcome.jpg")
     .setTitle("[ MEMBER BARU ]")
     .setThumbnail(member.user.displayAvatarURL)
     .setDescription(`👑 ${member.user} \n Selamat Datang Di Server ${member.guild.name}, \n Jangan Lupa Ya Dibaca : \n # RULES \n # INFORMASI \n Dan Isi # BIODATA \n Terima Kasih!`)
@@ -24,10 +23,9 @@ const welcomeChannel = member.guild.channels.find('name', 'welcomer-goodbye');
 });
 
 bot.on('guildMemberRemove', async (member) => {
-const byeChannel = member.guild.channels.find('name', 'welcomer-goodbye');
+const byeChannel = member.guild.channels.find('name', 'welcome');
   if (byeChannel) {
     let byeEmbed = new Discord.RichEmbed()
-    .setImage("https://cdn.discordapp.com/attachments/514584901207588889/516393990334054400/goodbye.jpg")
     .setTitle("[ MEMBER KELUAR ]")
     .setThumbnail(member.user.displayAvatarURL)
     .setDescription(`${member.user.tag} \n Semoga Kamu Menemukan Server \n Yang Lebih Baik Lagi!`)
