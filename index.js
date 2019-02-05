@@ -8,13 +8,12 @@ bot.on("ready", async () => {
 });
 
 bot.on('guildMemberAdd', async (member) => {
-const welcomeChannel = member.guild.channels.find('name', 'welcome');
+const welcomeChannel = member.guild.channels.find('name', 'welcome-goodbye');
   if (welcomeChannel) {
      let WelcomeEmbed = new Discord.RichEmbed()
     .setTitle("[ MEMBER BARU ]")
     .setThumbnail(member.user.displayAvatarURL)
     .setDescription(`👑 ${member.user} \n Selamat Datang Di Server ${member.guild.name}, \n Jangan Lupa Ya Dibaca : \n # RULES \n # INFORMASI \n Dan Isi # BIODATA \n Terima Kasih!`)
-
     .setFooter(`Kamu Member Ke ${member.guild.memberCount}`)
     .setTimestamp();
     welcomeChannel.send(WelcomeEmbed)
@@ -23,13 +22,12 @@ const welcomeChannel = member.guild.channels.find('name', 'welcome');
 });
 
 bot.on('guildMemberRemove', async (member) => {
-const byeChannel = member.guild.channels.find('name', 'welcome');
+const byeChannel = member.guild.channels.find('name', 'welcome-goodbye');
   if (byeChannel) {
     let byeEmbed = new Discord.RichEmbed()
     .setTitle("[ MEMBER KELUAR ]")
     .setThumbnail(member.user.displayAvatarURL)
     .setDescription(`${member.user.tag} \n Semoga Kamu Menemukan Server \n Yang Lebih Baik Lagi!`)
-
     .setTimestamp();
     byeChannel.send(byeEmbed)
   }
