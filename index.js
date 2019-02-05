@@ -28,6 +28,7 @@ const byeChannel = member.guild.channels.find('name', 'welcome-goodbye');
     .setTitle("[ MEMBER KELUAR ]")
     .setThumbnail(member.user.displayAvatarURL)
     .setDescription(`${member.user.tag} \n Semoga Kamu Menemukan Server \n Yang Lebih Baik Lagi!`)
+    .setFooter(`Member Sekarang ${member.guild.memberCount}`)
     .setTimestamp();
     byeChannel.send(byeEmbed)
   }
