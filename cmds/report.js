@@ -9,7 +9,6 @@ exports.run = async (bot, message, args) => {
     let reason = args.slice(1).join(' ');
     if (!reason) reason = "Tidak diinformasikan.";
     let embed = new Discord.RichEmbed()
-        .setColor('RANDOM')
         .setThumbnail(message.author.avatarURL)
         .setTitle(`report`)
         .addField('Yang melaporkan:', message.author)
