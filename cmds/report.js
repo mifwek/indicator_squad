@@ -11,7 +11,7 @@ exports.run = async (bot, message, args) => {
     let embed = new Discord.RichEmbed()
         .setColor('RANDOM')
         .setThumbnail(message.author.avatarURL)
-        .setTitle(`•REPORT•`)
+        .setTitle(`report`)
         .addField('Yang melaporkan:', message.author)
         .addField('Yang dilaporkan:', member.user)
         .addField('Alasan:', reason)
