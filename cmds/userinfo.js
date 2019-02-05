@@ -5,7 +5,6 @@ exports.run = async (bot, message, args) => {
         let embed = new Discord.RichEmbed()
         .setAuthor(`${user.tag}'s Info`, user.displayAvatarURL)
         .setThumbnail(user.displayAvatarURL)
-        .setColor('RANDOM')
         .addField('ID', user.id, true)
         .addField('Username', user.username, true)
         .addField('Discrim', user.discriminator, true)
