@@ -22,5 +22,5 @@ exports.run = async (bot, message, args) => {
 }
 
 exports.help = {
-	name: "youtube"
+	name: "yt"
 }
