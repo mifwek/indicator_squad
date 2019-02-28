@@ -11,7 +11,7 @@ bot.on('guildMemberAdd', async (member) => {
 const welcomeChannel = member.guild.channels.find('name', 'welcome-goodbye');
   if (welcomeChannel) {
      let WelcomeEmbed = new Discord.RichEmbed()
-    .setTitle("[ MEMBER BARU ]")
+    .setTitle("[ MEMBER MASUK ]")
     .setThumbnail(member.user.displayAvatarURL)
     .setDescription(`👑 ${member.user} \n Selamat Datang Di Server ${member.guild.name} Discord. \nKami Harap Kamu Betah Di Server kami.`)
     .setFooter(`Kamu Member Ke ${member.guild.memberCount}`)
