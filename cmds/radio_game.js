@@ -1,5 +1,4 @@
 const Discord = require("discord.js");
-const YTDL = require("");
 function play(connection, message) {
     var server = servers[message.guild.id];
     server.dispatcher = connection.playStream("https://www.rmfon.pl/play,156"(server.queue[0], {filter: "audioonly"}));
