@@ -13,8 +13,6 @@ exports.run = async (bot, message, args) => {
     //play
     if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("Gua males muterin lagu buat lu 😅");
     
-    }
-    
     message.channel.send("✔️ | Selamat Mendengarkan.")
     if(!message.member.voiceConnection) message.member.voiceChannel.join().then(function(connection) {
         play(connection, message);
