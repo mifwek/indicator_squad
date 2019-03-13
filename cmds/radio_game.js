@@ -12,9 +12,7 @@ var servers = {};
 exports.run = async (bot, message, args) => {
     //play
     if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("Gua males muterin lagu buat lu 😅");
-    if (!args[0]) {
-         message.channel.send("Silakan tentukan link");
-         return
+    
     }
     
     if(!message.member.voiceChannel) {
