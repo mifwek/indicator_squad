@@ -35,5 +35,5 @@ exports.run = async (bot, message, args) => {
 }
 
 exports.help = {
-    name: "play"
+    name: "radio_game"
 }
