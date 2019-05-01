@@ -9,8 +9,8 @@ let embed = new Discord.RichEmbed()
           .setTimestamp()
       .setFooter("Pendapat dari " + message.author.username); 
   message.channel.send(embed).then(msg => { // Mengirim Embed
-message.react("435160985259737099") //Ini Emoji Yes dan No
-   message.react("435160984521408512");
+message.react(":white_check_mark:") //Ini Emoji Yes dan No
+   message.react(":negative_squared_cross_mark:");
  });
 }                                
   
