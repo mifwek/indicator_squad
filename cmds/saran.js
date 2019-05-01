@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 exports.run = async (bot, message, args) => {
 let saran = args.join(" "); 
 let embed = new Discord.RichEmbed()
-.setTitle(`Saran`) //Judul 
+.setTitle(`-SARAN-`) //Judul 
 .setDescription(saran) //Isi
   .setColor("#FF0A0A")
           .setTimestamp()
